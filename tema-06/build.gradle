@@ -1,0 +1,33 @@
+plugins {
+    id 'war'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+ext {
+    springVersion = "5.1.9.RELEASE"
+}
+
+repositories {
+	maven { url 'http://repo.spring.io/libs-release' }
+    jcenter()
+    maven { url 'https://oss.sonatype.org/content/groups/public/' }
+}
+
+dependencies {
+	compile([
+			"org.springframework:spring-core:$springVersion",
+			"org.springframework:spring-context:$springVersion",
+			"org.springframework:spring-beans:$springVersion",
+			"org.springframework:spring-web:$springVersion",			
+			 "javax.validation:validation-api:2.0.1.Final"
+			])
+			
+	providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+			
+    testImplementation "junit:junit:4.12"
+	testImplementation "org.springframework:spring-test:$springVersion"
+}
