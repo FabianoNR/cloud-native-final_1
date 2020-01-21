@@ -18,7 +18,7 @@ node {
     }
 
     stage('Run Build') {
-        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
+        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish', useWrapper: true
     }
 
     stage('Publish build info') {
