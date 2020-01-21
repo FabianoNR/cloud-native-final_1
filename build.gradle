@@ -1,6 +1,17 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+  }
+}
+
 plugins {
     id 'war'
 }
+
+apply plugin: "com.jfrog.artifactory"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
