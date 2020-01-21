@@ -4,13 +4,14 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
-				sh 'make'
-				archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+				sh 'gradlew task'
 			}
 		}
 		stage('Test') {
 		   steps {
    		    	echo 'Testing...'
+   		    	sh 'make check || true'
+   		    	junit '**/target/*.xml'
    			}
 		}
 		stage('Deploy') {
