@@ -7,6 +7,9 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+group = 'com.fabianorapkiewicz.cloudnative.tema6'
+version = '0.0.1-SNAPSHOT'
+
 ext {
     springVersion = "5.1.9.RELEASE"
 }
