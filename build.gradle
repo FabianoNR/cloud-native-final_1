@@ -8,7 +8,7 @@ java {
 }
 
 group = 'com.fabianorapkiewicz.cloudnative.tema6'
-version = '0.0.1-SNAPSHOT'
+version = 'SNAPSHOT'
 
 ext {
     springVersion = "5.1.9.RELEASE"
