@@ -13,8 +13,12 @@ node {
         rtGradle.resolver repo:'jcenter', server: server
     }
 
-    stage('Gradle build') {
-        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'clean test artifactoryPublish'
+	stage('Run Test') {
+        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'test'
+    }
+
+    stage('Run Build') {
+        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
     }
 
     stage('Publish build info') {
