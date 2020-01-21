@@ -5,7 +5,7 @@ pipeline {
 			steps {
 				echo 'Building...'
 				sh 'make'
-				archiveArtifacts artifact: '**/target/*.war', fingerprint: true
+				archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
 			}
 		}
 		stage('Test') {
