@@ -6,7 +6,7 @@ node {
     def buildInfo
 
 	stage ('Clone') {
-        git url: 'https://github.com/JFrog/project-examples.git'
+        git url: 'https://github.com/fabianorapkiewicz/cloud-native-final_1.git'
     }
 
     stage('Artifactory configuration') {
