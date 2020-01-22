@@ -5,6 +5,10 @@ node {
     def rtGradle = Artifactory.newGradleBuild()
     def buildInfo
 
+	stage ('Clone') {
+        git url: 'https://github.com/JFrog/project-examples.git'
+    }
+
     stage('Artifactory configuration') {
 
         rtGradle.tool = "Gradle-6.1"
@@ -13,12 +17,9 @@ node {
         rtGradle.resolver repo:'jcenter', server: server
     }
 
-	stage('Run Test') {
-        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'test'
-    }
 
     stage('Run Build') {
-        buildInfo = rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
+        buildInfo = rtGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
     }
 
     stage('Publish build info') {
