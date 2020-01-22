@@ -5,13 +5,6 @@ node {
     def rtGradle = Artifactory.newGradleBuild()
     def buildInfo
 
-
-	stage('download source code') {
-         steps {
-            git 'https://github.com/fabianorapkiewicz/cloud-native-final_1.git'
-         }
-    }
-
     stage('Artifactory configuration') {
 
         rtGradle.tool = "Gradle-6.1"
