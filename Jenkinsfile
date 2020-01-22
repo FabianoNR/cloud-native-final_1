@@ -14,7 +14,7 @@ node {
     }
 
 	stage('Run Test') {
-        rtGradle.run rootDir: "", buildFile: 'build.gradle', tasks: 'test'
+        sh './gradlew test'
     }
 
     stage('Run Build') {
