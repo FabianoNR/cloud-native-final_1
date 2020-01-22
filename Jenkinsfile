@@ -16,6 +16,10 @@ node {
         rtGradle.deployer repo:'gradle-dev-local', server: server
         rtGradle.resolver repo:'jcenter', server: server
     }
+    
+    stage('Run tests') {
+    	sh './gradlew test'               
+    }
 
 
     stage('Run Build') {
