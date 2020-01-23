@@ -1,0 +1,24 @@
+pipeline {
+   agent any
+   stages {
+   
+      stage('Downloading project from jfrog repository') {
+         steps {
+         	rtDownload (
+	    		serverId: 'Artifactory-1',
+	    		spec: '''{
+	          		  "files": [
+		            	{
+	              			"pattern": "gradle-dev-local/com/fabianorapkiewicz/cloudnative/tema6/tema-06/",
+	              			"target": "cloud-final1/",
+	            		}
+	          		  ]
+	    		}''',
+	    		
+	    		buildName: 'calculator-tema06',
+	    		buildNumber: '06'
+			)
+         }
+      }
+   }
+}
