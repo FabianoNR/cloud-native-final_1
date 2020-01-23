@@ -30,7 +30,10 @@ pipeline {
       stage('Building docker image and push docker hub') {
           
           steps {
-              sh 'packer build build-image.json'
+              sh '''
+              	packer build build-image.json
+              	ls
+              '''
           }
       }
 
