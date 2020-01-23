@@ -16,7 +16,7 @@ pipeline {
 	          		  "files": [
 		            	{
 	              			"pattern": "gradle-dev-local/com/fabianorapkiewicz/cloudnative/tema6/tema-06/",
-	              			"target": "cloud-final1/",
+	              			"target": "cloud-final1/"
 	            		}
 	          		  ]
 	    		}''',
