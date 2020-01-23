@@ -1,9 +1,15 @@
 pipeline {
    agent any
+   
    stages {
    
-      stage('Downloading project from jfrog repository') {
+      stage('Downloading from jfrog repository') {
+         
          steps {
+         	
+         	rtServer (
+                id: 'jenkins-artifactory-id'
+            )
          	rtDownload (
 	    		serverId: 'jfrog',
 	    		spec: '''{
