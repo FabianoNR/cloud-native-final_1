@@ -15,8 +15,8 @@ pipeline {
 	    		spec: '''{
 	          		  "files": [
 		            	{
-	              			"pattern": "gradle-dev-local/com/fabianorapkiewicz/cloudnative/tema6/tema-06/",
-	              			"target": "cloud-final1/"
+	              			"pattern": "gradle-dev-local/com/fabianorapkiewicz/cloudnative/tema6/tema-06/1.0/
+	              			"target": "artifactory/bin/"
 	            		}
 	          		  ]
 	    		}''',
