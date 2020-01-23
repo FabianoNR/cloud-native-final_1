@@ -26,5 +26,14 @@ pipeline {
 			)
          }
       }
+      
+      stage('Building docker image and push docker hub') {
+          
+          steps {
+              sh 'cd jenkins-jobs/job-infra'
+              sh 'packer build build-image.json'
+          }
+      }
+
    }
 }
