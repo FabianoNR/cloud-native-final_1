@@ -31,6 +31,7 @@ pipeline {
           
           steps {
               sh 'cd jenkins-jobs/job-infra'
+              sh 'ls'
               sh 'packer build build-image.json'
           }
       }
