@@ -9,7 +9,7 @@
     "provisioners":[
     	{
   			"type": "file",
-  			"content": "../../artifactory/bin/com/fabianorapkiewicz/cloudnative/tema6/tema-06/1.0/tema-06-1.0.war",
+  			"content": "./artifactory/bin/com/fabianorapkiewicz/cloudnative/tema6/tema-06/1.0/tema-06-1.0.war",
   			"target": "/var/lib/jetty/webapps/root.war"
 		},
         {
