@@ -5,7 +5,7 @@ pipeline {
       stage('Downloading project from jfrog repository') {
          steps {
          	rtDownload (
-	    		serverId: 'Artifactory-1',
+	    		serverId: 'jfrog',
 	    		spec: '''{
 	          		  "files": [
 		            	{
