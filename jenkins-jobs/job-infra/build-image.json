@@ -12,6 +12,13 @@
   			"source": "../../artifactory/bin/com/fabianorapkiewicz/cloudnative/tema6/tema-06/1.0/tema-06-1.0.war",
   			"destination": "/var/lib/jetty/webapps/root.war"
 		},
+		{
+      		"type": "shell",
+      		"inline": [
+        				"apt-get update",
+        				"apt-get install python -yq"
+      				  ]
+    	},
         {
       		"type": "ansible",
       		"user": "jetty",
