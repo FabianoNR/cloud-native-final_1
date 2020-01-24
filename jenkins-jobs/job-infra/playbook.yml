@@ -7,4 +7,4 @@
       copy:
         dest: /root/foo
         content: Hello World!
-        owner: root
+        owner: jetty
