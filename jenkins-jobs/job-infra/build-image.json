@@ -12,9 +12,16 @@
   			"source": "../../artifactory/bin/com/fabianorapkiewicz/cloudnative/tema6/tema-06/1.0/tema-06-1.0.war",
   			"destination": "/var/lib/jetty/webapps/root.war"
 		},
+		{
+			"type": "shell",
+			"inline": [
+						"apt-get update",
+						"apt-get install python3 python3-pip python3-apt -yq",
+						"pip3 install ansible"
+					   ]
+   	 	},
         {
-      		"type": "ansible",
-      		"user": "root",
+      		"type": "ansible-local",
       		"playbook_file": "./playbook.yml"
     	}
     ],
