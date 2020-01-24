@@ -5,6 +5,5 @@
   tasks:
     - name: Add a file to root's home dir
       copy:
-        dest: /root/foo
+        dest: /home/foo
         content: Hello World!
-        owner: jetty
