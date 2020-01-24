@@ -1,10 +1,8 @@
 ---
 
-- name: A demo to run ansible in a docker container
-  hosts: all
-  become_user: sudo
+- name: Provision Python
+  hosts: localhost
+  gather_facts: no
   tasks:
-    - name: Add a file to root's home dir
-      copy:
-        dest: /home/foo
-        content: Hello World!
+    - name: Boostrap python
+      raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
