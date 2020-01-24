@@ -2,6 +2,7 @@
 
 - name: A demo to run ansible in a docker container
   hosts: all
+  become_user: sudo
   tasks:
     - name: Add a file to root's home dir
       copy:
