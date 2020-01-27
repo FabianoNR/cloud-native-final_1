@@ -1,0 +1,25 @@
+pipeline {
+   agent any
+   
+   stages {
+   
+      stage('Pull from dockerhub') {
+         
+         steps {
+         	sh '''
+              	docker pull fabianonr/ilegra-final-cloud:latest
+              	'''
+         }
+      }
+      
+      stage('Running docker') {
+          
+          steps {
+              sh '''
+                 docker run -d -p 8088:8080 fabianonr/ilegra-final-cloud:latest
+              	'''
+          }
+      }
+
+   }
+}
