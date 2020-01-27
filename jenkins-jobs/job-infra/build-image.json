@@ -3,7 +3,10 @@
         {
             "type": "docker",
             "image": "jetty:9.3-jre8",
-            "commit": true
+            "commit": true,
+            "changes": [
+        		"ENTRYPOINT [\"java\", \"-jar\", \"/usr/local/jetty/start.jar\"]"
+      		]
         }
     ],
     "provisioners":[
