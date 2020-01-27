@@ -1,19 +1,56 @@
-Containerização da Calculadora
+Cloud Native: tema final - parte 1
 
-Considerando que o docker já está instalado em sua máquina, para rodar a aplicação basta:
+Esse projeto visa a construção de 3 jobs que devem rodar no servidor de integração contínua Jenkins. Os três jobs estão descritos a seguir:
 
-Abrir terminal de comando e acessar diretório onde está o arquivo Dockerfile
-	diretório: jovens-talentos/2-cloud-native/fabiano-rapkiewicz/tema-06
+Job 1 - Build App
+	clonado o projeto a partir do Github;
+	executado os testes;
+	gerado um pacote .war através do build via Gradle;
+	publicado o projeto no repositório JFrog Artifactory.
 
-Usar o Gradle Wrapper para gerar o arquivo a ser feito deploy
-	./gradlew clean build	
+Job 2 - Infra
+	buscado pacote .war do do proejto a aprtir do repositório do JFrog Artifactory;
+	montado imagem do docker (build) através do Packer;
+	provisionado uma máquina virtual através do gerenciador de configurações Ansible;
+	enviado imagem docker montada pelo Packer para repositório dockerhub.
 
-Criar montar a imagem para rodar o container a apartir do arquivo docker file
-	docker build -t "NOME_DA_IMAGEM" .
+Job 3 - Run 
+	baixado do repositório dockerhub a imagem do projeto;
+	rodado um docker container a partir da imagem recém baixada.
 
-Rodar um container a partir da imagem criada acima
-	docker run -p 8080:8080 "NOME_DA_IMAGEM"
-	
-*** Os dois passos anteriores que executam comandos docker estão considerando que você tem o nome de usuário adicionado no grupo docker, por isso não houve necessidade do uso de sudo precedendo o comando. Caso você queira evitar de usar sudo toda vez que executar um comando docker, adicione o usuário ao grupo: sudo usermod -aG docker ${USER} 
+A seguir um vídeo demonstrativo onde é apresentado todo o pipeline descrito acima:
+https://youtu.be/algumacoisa
 
-Acessar via browser o endereço http://localhost:8080 para usar a aplicação da Calculadora
+
+Tecnologias Utilizadas
+
+Jenkins
+Docker
+Packer
+Ansible
+Jfrog
+Gradle
+
+
+Pré-requisitos para rodar a aplicação
+
+É necessário que a máquina que irá rodar o pipeline via Jenkins tenha instalado: Jenkins, Docker, Jfrog, Packer e Ansible.
+
+Para instalação do Docker:
+
+https://docs.docker.com/install
+
+Para instalação do Packer:
+
+https://www.packer.io/intro/getting-started/install.html
+
+Para instalação do Jenkins e Jfrog:
+
+para facilitar o uso do JFrog e Jenkins basta executar o script que segue:
+
+	sudo bash jenkins_jfrog.sh
+
+esse script irá disponibilizar um servidor Jenkins e Jfrog rodando respectivamente nas portas 8080 e 8081.
+
+
+
