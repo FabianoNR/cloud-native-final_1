@@ -1,12 +1,16 @@
 ---
 
-- name: Provision Python
-  hosts: localhost
-  gather_facts: no
+- hosts: localhost
+  gather_facts: False
+  
   tasks:
+   - name: install python 2
+     raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
 
-    - name: install java 8
-      apt:
-        name: openjdk-8-jdk
-        update_cache: yes
-        install_recommends: no
+   - shell: "python --version"
+     register: pythonVersion
+   - debug:
+       var: pythonVersion
+ 
+   - debug:
+       msg: "This is hostname: {{ pythonVersion }}"
