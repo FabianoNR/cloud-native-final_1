@@ -19,10 +19,7 @@ pipeline {
 	              			"target": "artifactory/bin/"
 	            		}
 	          		  ]
-	    		}''',
-	    		
-	    		buildName: 'calculator-tema06',
-	    		buildNumber: '06'
+	    		}'''
 			)
          }
       }
