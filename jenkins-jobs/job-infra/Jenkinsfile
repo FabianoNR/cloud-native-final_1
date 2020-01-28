@@ -7,9 +7,6 @@ pipeline {
          
          steps {
          	
-         	rtServer (
-                id: 'jenkins-artifactory-id'
-            )
          	rtDownload (
 	    		serverId: 'jfrog',
 	    		spec: '''{
