@@ -96,7 +96,7 @@ Role a página até encontrar a opção Artifactory e clique no botão Add. Feit
  - Nos campos da sessão Default Deployer Credentials, configure as credencias de acesso inserindo o mesmo usuário e senha usados para acessar o servidor Artifactory Jfrog.
  - Clique no botão **Salvar** antes de sair da página.
 
-## Rodando Pipeliline
+## Rodando Pipeline
 
 Para rodar o Pipeline é necessário antes criar os jobs, conforme segue a baixo;
 
