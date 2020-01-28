@@ -18,7 +18,7 @@ Esse projeto visa a construção de 3 jobs que devem rodar no servidor de integr
    - baixado do repositório dockerhub a imagem do projeto;
    - rodado um docker container a partir da imagem recém baixada.
 
-_[Clique aqui](https://drive.google.com/drive/u/0/my-drive) para assistir um vídeo demonstrativo onde é apresentado todo o pipeline descrito acima._
+_[Clique aqui](https://drive.google.com/file/d/1MZmtVnORuU5_IqUFvgqbqC_Rtfb-x9Jo/view?usp=sharing) para assistir um vídeo demonstrativo onde é apresentado todo o pipeline descrito acima._
 
 
 ## Tecnologias Utilizadas
