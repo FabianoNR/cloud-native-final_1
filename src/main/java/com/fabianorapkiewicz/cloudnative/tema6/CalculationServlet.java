@@ -41,7 +41,7 @@ public class CalculationServlet extends HttpServlet {
 			writer.println("\t op é o nome da operação. \n");
 			writer.println("*As operações suportadas são: sum, sub, mul, div, exp");
 			writer.println("Exemplo de uma multiplicação entre 3 e 9: ");
-			writer.print("http://localhost:8089/tema-06/calculadora?n1=3&n2=9&op=mul");
+			writer.print("http://localhost:8089/calculadora?n1=3&n2=9&op=mul");
 		}
 		
 

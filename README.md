@@ -135,5 +135,5 @@ Repita os passos de criação do Job Build App, modificando os passos 3 e 11 con
 9 - Entre o path "jenkins-jobs/job-run/Jenkinsfile" no campo Script Path.
 
 Após todos Jobs serem criados, basta executálos em ordem para ter todo Pipeline executado e aplicação da calucladora rodando no browser em
-http://localhost:8089/tema-06/calculadora
+http://localhost:8089/calculadora
 
