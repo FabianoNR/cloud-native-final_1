@@ -27,6 +27,7 @@ node {
     }
 
     stage('Publish build info') {
+    	buildInfo.name = 'tema-final1-cloud'
         server.publishBuildInfo buildInfo
     }
 }
