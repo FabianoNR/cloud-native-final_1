@@ -82,20 +82,19 @@ Instale os seguintes plugins:
 
 Com os plugins instalados, acesse a opção *Manage Jenkins >> Configure System* para realizar as seguintes configurações de acesso: 
 
-Sessão Github
+**Sessão Github**
+
 Role a página até encontrar a opção GitPlugin. Feito isso, entre com o nome de usuário e e-mail usados para acessar a conta do Git. O
 endereço específico do repositório será usado na parametrização dos Jobs; 
 
-Sessão Artifactory
+**Sessão Artifactory**
 
 Role a página até encontrar a opção Artifactory e clique no botão Add. Feito isso, configure a conexão com o servidor Artifactory:
 
-No campo Server ID insira um valor para o ID, pode ser por exemplo jfrog;
-No campo URL insira "http://localhost:8081/artifactory" que é o endereço onde está rodando o servidor Artifactory JFrog;
-Nos campos da sessão Default Deployer Credentials, configure as credencias de acesso inserindo o mesmo usuário e senha usados para acessar o
-servidor Artifactory Jfrog.
-
-Após todas configurações realizadas em "Manage Jenkins >> Configure System", clique no botão Salvar antes de sair da página.
+ - No campo Server ID insira um valor para o ID, pode ser por exemplo jfrog;
+ - No campo URL insira "http://localhost:8081/artifactory" que é o endereço onde está rodando o servidor Artifactory JFrog;
+ - Nos campos da sessão Default Deployer Credentials, configure as credencias de acesso inserindo o mesmo usuário e senha usados para acessar o servidor Artifactory Jfrog.
+ - Clique no botão **Salvar** antes de sair da página.
 
 ## Rodando Pipeliline
 
@@ -103,8 +102,7 @@ Para rodar o Pipeline é necessário antes criar os jobs, conforme segue a baixo
 
 ### Criação de Jobs:
 
-O passo a passo para criação de um job está descrito logo abaixo. Como nesse projeto a pipeline está definida em arquivos Jenkinsfile, os 
-passos devem ser replicados para criação dos outros dois jobs, segue:
+O passo a passo para criação de um job está descrito logo abaixo. Como nesse projeto a pipeline está definida em arquivos Jenkinsfile, os passos devem ser replicados para criação dos outros dois jobs, segue:
   
 ### Criação do Job Build App
  
@@ -115,11 +113,11 @@ passos devem ser replicados para criação dos outros dois jobs, segue:
 5 - Confirme clicando no botão OK;
 6 - Role a página até encontrar a sessão Pipeline;
 7 - Selecione a opção "Pipeline script from SCM" no campo Definition;
-8 -	Selecione a opção Git no campo SCM, ;
-9 -	Entre com o endereço https://github.com/fabianorapkiewicz/cloud-native-final_1.git no campo Repository URL; 
-10- Entre com o nome da branch como sendo */master no campo Branch Specifier;
-11- Entre o path "jenkins-jobs/job-buildApp/Jenkinsfile" no campo Script Path;
-12- Clicar no botão salvar;
+	Selecione a opção Git no campo SCM, ;
+	Entre com o endereço https://github.com/fabianorapkiewicz/cloud-native-final_1.git no campo Repository URL; 
+8 - Entre com o nome da branch como sendo */master no campo Branch Specifier;
+9 - Entre o path "jenkins-jobs/job-buildApp/Jenkinsfile" no campo Script Path;
+10- Clicar no botão salvar;
 
 	
 ### Criação do Job Infra
@@ -127,14 +125,14 @@ passos devem ser replicados para criação dos outros dois jobs, segue:
 Repita os passos de criação do Job Build App, modificando os passos 3 e 11 conforme segue: 
 
 3 - Entre com um nome para o job, por coerência ao projeto pode ser Infra;
-11- Entre o path "jenkins-jobs/job-infra/Jenkinsfile" no campo Script Path.
+9 - Entre o path "jenkins-jobs/job-infra/Jenkinsfile" no campo Script Path.
 
 ### Criação do Job Run
 
 Repita os passos de criação do Job Build App, modificando os passos 3 e 11 conforme segue: 
 
 3 - Entre com um nome para o job, por coerência ao projeto pode ser Run;
-11- Entre o path "jenkins-jobs/job-run/Jenkinsfile" no campo Script Path.
+9 - Entre o path "jenkins-jobs/job-run/Jenkinsfile" no campo Script Path.
 
 Após todos Jobs serem criados, basta executálos em ordem para ter todo Pipeline executado e aplicação da calucladora rodando no browser em
 http://localhost:8089/tema-06/calculadora
